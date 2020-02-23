@@ -7,7 +7,7 @@ if [ "$#" -eq 1 ] && [ "$1" = "lock" ]; then
     i3lock --color 475263
     exit 0
 fi
-chosen=$(echo "sleep\nreboot\nlogout\nshutdown" | rofi -dmenu -no-custom)
+chosen=$(echo -e "sleep\nreboot\nlogout\nshutdown" | rofi -dmenu -no-custom)
 
 case "$chosen" in
     lock)
