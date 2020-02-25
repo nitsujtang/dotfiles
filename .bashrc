@@ -136,8 +136,11 @@ alias i3conf="vim ~/.config/i3/config"
 alias student="ssh -p 2222 student@localhost"
 alias weefee="nmtui"
 alias save="~/save.sh"
+alias activegfx="lspci -vnnn | perl -lne 'print if /^\d+\:.+(\[\S+\:\S+\])/' | grep VGA"
+alias jno492="ssh -i ~/backups/jno492/.ssh/id_rsa jno492@c09-30.sysnet.ucsd.edu"
 
-PS1='\[\e[32m\]\u\[\e[m\] \[\e[34m\]\w\[\e[m\] $(git branch 2>/dev/null | sed -n "s/* \(.*\)/\1 /p")$ '
+#PS1='\[\e[32m\]\u\[\e[m\]@\h \[\e[34m\]\w\[\e[m\] $(git branch 2>/dev/null | sed -n "s/* \(.*\)/\1 /p")$ '
+PS1='\[\e[32m\]\h\[\e[m\] \[\e[34m\]\w\[\e[m\] $(git branch 2>/dev/null | sed -n "s/* \(.*\)/\1 /p")$ '
 
 source ~/.fonts/*.sh
 eval $(opam env)
