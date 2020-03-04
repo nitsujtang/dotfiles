@@ -14,7 +14,11 @@ if [ -d $1 ]; then
     echo "done"
 elif [ -f $1 ]; then
     echo "updating file $1..."
-    rm ~/dotfiles/$1
+
+    if [ -f ~/dotfiles/$1 ]; then
+        rm ~/dotfiles/$1
+    fi
+
     cp $1 /home/nitsujtang/dotfiles
     echo "done"
 else
